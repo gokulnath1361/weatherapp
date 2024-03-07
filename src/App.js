@@ -12,14 +12,20 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
 
   const [query, setQuery] = useState({ q: 'vellore' });
+  // const [query, setQuery] = useState( 'vellore' );
   const [units, setUnits] = useState('metric');
   const [weather, setWeather] = useState(null);
+  // const [lati,setlat]=useState('');
+  // const [long,setlon]=useState('');
+  // console.log(lati,long);
+
   console.log("weather",weather);
   useEffect(() => {
     const fetchWeather = async () => {
       const message = query.q?query.q:'current location';
       toast.info('fetching weather for '+message);
       await getFormatedWeatherData({ ...query, units })
+      // await getFormatedWeatherData(query,units,lati,long)
       .then((data) => { 
         toast.success(`sucessfully fetched weather for ${data.name},${data.country}`)
         setWeather(data)
@@ -40,11 +46,15 @@ function App() {
       return "from-yellow-700 to-orange-700";
     }
   }
+  // const handlecity=()=>{
+  //   setQuery('')
+  // }
 
   return (
     <div className={`mx-auto max-w-fit nt-4 py-5 px-32 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}>
       <TopButton setQuery={setQuery} />
       <Inputs   setQuery={setQuery} units={units} setUnits={setUnits}/>
+
       {weather && (
         <div>
           <TimeAndLocation weather={weather}/>
@@ -55,6 +65,7 @@ function App() {
       )}
 
       <ToastContainer autoClose={5000} theme='colored' newestOnTop={true} />
+
 
         </div>
       );
