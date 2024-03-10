@@ -1,0 +1,57 @@
+.temperaturedetails{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.25rem;
+    color: #fff;
+}
+.tempimg{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+.temp{
+    font-size: 3rem;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+}
+.tempdetail{
+    display: flex;
+    font-weight: 300;
+    font-size: 0.875rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.temptext{
+    font-weight: 500;
+    margin-left: 0.25rem;
+}
+.otherdetails{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    color: #fff;
+    font-size: 13px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.othertemptext{
+    font-weight: 500;
+}
+.fontlight{
+    font-weight: 300;
+    margin-left: 5px;
+    margin-right: 5px;
+}

@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
+import './Input.css'
 import { UilSearch, UilLocationPoint } from '@iconscout/react-unicons'
 
 
 function Inputs({setQuery,units,setUnits}) {
      const[city,setCity]=useState('');
+    //  const[latitude,setlati]=useState('');
+    //  const[longitude,setlong]=useState('');
+    //  console.log(latitude,longitude);
      const handleSearchClick=()=>{
       if(city !== ''){
         setQuery({q:city})
+        // setlat(latitude)
+        // setlon(longitude)
         setCity('');
       }
      }
@@ -14,7 +20,11 @@ function Inputs({setQuery,units,setUnits}) {
       if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition((position)=>{
           let lat=position.coords.latitude;
-          let lon=position.coords.longitude; 
+          let lon=position.coords.longitude;  
+          // setlati(lat);
+          // setlong(lon);
+          // setlat(latitude);
+          // setlon(longitude);
           setQuery({lat,lon})
         })
       }
@@ -28,27 +38,27 @@ function Inputs({setQuery,units,setUnits}) {
     }
 
   return (
-    <div className='flex flex-row justify-center my-6'>
-      <div className='flex flex-row w-3/4 items-center justify-center space-x-4'>
+    <div className='input'>
+      <div className='inputdiv'>
         <input type="text" 
         placeholder='Search for city....' 
         value={city}
         onChange={(e)=>setCity(e.target.value)}
-        className='text-xl font-light p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase'/>
+        className='inputfield'/>
         <UilSearch size={25}
         onClick={handleSearchClick}
-        className=" cursor-pointer text-white transition ease-out hover:scale-125"/>
+        className="search"/>
         <UilLocationPoint size={25}
         onClick={handleLocationClick}
-         className=" cursor-pointer text-white transition ease-out hover:scale-125"/>
+         className="location"/>
       </div>
-      <div className='flex flex-row w-1/4 items-center justify-center '>
+      <div className='units'>
         <button name='metric' 
-        onClick={handleUnitsChange} className='text-xl font-light transition ease-out hover:scale-125'>°C</button>
+        onClick={handleUnitsChange} className='celcius'>°C</button>
         <p className='text-xl text-white mx-1'>|</p>
         <button name='imperial'
         onClick={handleUnitsChange} 
-         className='text-xl font-light transition ease-out hover:scale-125'>F</button>
+         className='celcius'>F</button>
       </div>
     </div>
   )
