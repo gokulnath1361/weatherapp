@@ -1,0 +1,64 @@
+.input{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1.5rem; 
+    margin-bottom: 1.5rem;
+    position: sticky;
+    top: 0;
+}
+.inputdiv{
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+}
+.inputfield{
+    font-size: 1.25rem;
+    font-weight: 300;
+    padding: 0.5rem;
+    width: 100%;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    outline: none;
+    text-transform:lowercase;
+    margin-right: 7px;
+    border-radius: 20px;
+}
+.search{
+    cursor: pointer;
+    margin-right: 10px;
+    color: #fff;
+    transition-duration: 0.3s;
+    transition-timing-function:linear;
+}
+.search:hover{
+    transform: scale(1.25);
+}
+.location{
+    cursor: pointer;
+    color: #fff;
+    transition-duration: 0.3s;
+    transition-timing-function:linear;
+}
+.location:hover{
+    transform: scale(1.25);
+}
+.units{
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+}
+.celcius{
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #fff;
+    transition-duration: 0.3s;
+    transition-timing-function:linear;
+}
+.celcius:hover{
+    transform: scale(1.25);
+}

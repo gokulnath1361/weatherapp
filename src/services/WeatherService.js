@@ -4,8 +4,9 @@ const BASE_URL="https://api.openweathermap.org/data/2.5/";
 //using city current = https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 // 3hr forecast for 5 days=api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 const getWeatherData=(infoType,searchparams)=>{
+    // console.log(searchparams)
     // const getWeatherData=(infoType,searchparams,units)=>{
-    const url= new URL(BASE_URL + '/' + infoType );
+    const url= new URL(BASE_URL + infoType );
     // const url= `${BASE_URL}${infoType}?q=${searchparams}&appid=${API_KEY}&units=${units}`;
     url.search=new URLSearchParams({...searchparams,appid:API_KEY});
      
@@ -34,7 +35,7 @@ const getWeatherData=(infoType,searchparams)=>{
 //     // .then((data)=>console.log("latlon",data))
 // };
 const formatCurrentWeather=(data)=>{
-    console.log("formatcurrentdata",data);
+    // console.log("formatcurrentdata",data);
     const dateObj=new Date(data.dt*1000);
     const time = dateObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const num = String(dateObj.getDate()).padStart(2, '0');
@@ -147,6 +148,7 @@ const formatForecastWeather=(data)=>{
 // }
 
 const getFormatedWeatherData= async (searchparams)=>{
+    //  console.log(searchparams)
 // const getFormatedWeatherData= async (query,units,lati,long)=>{
     // console.log(lati,long);
     const formatedCurrentWeather = await getWeatherData('weather',searchparams)
