@@ -5,14 +5,9 @@ import { UilSearch, UilLocationPoint } from '@iconscout/react-unicons'
 
 function Inputs({setQuery,units,setUnits}) {
      const[city,setCity]=useState('');
-    //  const[latitude,setlati]=useState('');
-    //  const[longitude,setlong]=useState('');
-    //  console.log(latitude,longitude);
      const handleSearchClick=()=>{
       if(city !== ''){
         setQuery({q:city})
-        // setlat(latitude)
-        // setlon(longitude)
         setCity('');
       }
      }
@@ -21,10 +16,6 @@ function Inputs({setQuery,units,setUnits}) {
         navigator.geolocation.getCurrentPosition((position)=>{
           let lat=position.coords.latitude;
           let lon=position.coords.longitude;  
-          // setlati(lat);
-          // setlong(lon);
-          // setlat(latitude);
-          // setlon(longitude);
           setQuery({lat,lon})
         })
       }
