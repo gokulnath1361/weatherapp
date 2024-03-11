@@ -52,8 +52,6 @@ const formatCurrentWeather=(data)=>{
     const sunsetObj=new Date(data.sys.sunset*1000);
     const sunset = sunsetObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-
-
     const {
         coord:{lat, lon},
         main:{temp,feels_like,temp_min,temp_max,humidity},
