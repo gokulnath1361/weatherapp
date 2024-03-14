@@ -53,7 +53,7 @@ function App() {
   // }
   const threshold =units === 'metric'?20:60;
   return (
-    <div className={`${weather && weather.temp>=threshold?"container bgcolor":" container"}`}>
+    <div className={`${weather && weather.temp>=threshold?"container bgcolor":"container"}`}>
       <TopButton setQuery={setQuery} />
       <Inputs   setQuery={setQuery} units={units} setUnits={setUnits}/>
 
